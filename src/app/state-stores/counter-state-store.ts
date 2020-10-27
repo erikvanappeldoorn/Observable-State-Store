@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CounterState } from '../interfaces/counterState';
-import { CounterStateStoreServiceActions } from '../interfaces/counterStateStoreSeviceActions';
-import { StateStoreServiceBase } from './state-store-service-base.service';
+import { CounterStateStoreActions } from '../interfaces/counterStateStoreActions';
+import { StateStoreBase } from './state-store-base';
 
 @Injectable({ providedIn: 'root' })
-export class CounterStateStoreService 
-  extends StateStoreServiceBase<CounterState> 
-  implements CounterStateStoreServiceActions
+export class CounterStateStore 
+  extends StateStoreBase<CounterState> 
+  implements CounterStateStoreActions
   {
     protected constructor() {
       super();

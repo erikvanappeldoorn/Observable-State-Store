@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterStateStoreService } from 'src/app/services/counter-state-store-service';
+import { CounterStateStore } from 'src/app/state-stores/counter-state-store';
 
 @Component({
   selector: 'app-controls',
@@ -8,19 +8,19 @@ import { CounterStateStoreService } from 'src/app/services/counter-state-store-s
 })
 export class ControlsComponent {
 
-  constructor(private counterStateStoreService: CounterStateStoreService) {
+  constructor(private counterStateStore: CounterStateStore) {
     this.reset();
   }
   
   public increment(): void {
-    this.counterStateStoreService.increment();
+    this.counterStateStore.increment();
   }
 
   public decrement(): void {
-    this.counterStateStoreService.decrement();
+    this.counterStateStore.decrement();
   }
 
   public reset(): void {
-    this.counterStateStoreService.reset();
+    this.counterStateStore.reset();
   }
 }

@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({ providedIn: 'root' })
-export class StateStoreServiceBase<T> {
+export class StateStoreBase<T> {
   protected _state$: BehaviorSubject<T>;
 
   protected constructor() {
