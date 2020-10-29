@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterStateStore } from 'src/app/state-stores/counter-state-store';
+import { CounterStateStore } from '@stores/counter-state-store';
 
 @Component({
   selector: 'app-controls',
