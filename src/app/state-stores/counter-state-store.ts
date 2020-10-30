@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CounterState } from '../interfaces/counterState';
-import { CounterStateStoreActions } from '../interfaces/counterStateStoreActions';
+import { CounterState } from '../state/counter-state';
+import { CounterStateStoreActions } from '../state-actions/counter-state-store-actions';
 import { StateStoreBase } from './state-store-base';
 
 @Injectable({ providedIn: 'root' })
