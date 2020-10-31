@@ -14,7 +14,7 @@ function initialize(): TrackState {
     };
 }
 
-fdescribe('TrackStateStore', () => {
+describe('TrackStateStore', () => {
   let stateStore: TrackStateStore;
    
   beforeEach(() => {
@@ -55,5 +55,47 @@ fdescribe('TrackStateStore', () => {
     });
   });
 
+  it('next should rotate selected index', done => {
+    stateStore.next();
+    stateStore.next();
+    stateStore.next();
+
+    stateStore.value$.subscribe(state => {
+      expect(state.selectedIndex).toBe(0);
+      done();
+    });
+  });
+
+  it('previous should decrease selected index', done => {
+    stateStore.next();
+    stateStore.next();
+    stateStore.previous();
+
+    stateStore.value$.subscribe(state => {
+      expect(state.selectedIndex).toBe(1);
+      done();
+    });
+  });
+
+  it('previous should rotate selected index', done => {
+    stateStore.previous();
+
+    stateStore.value$.subscribe(state => {
+      expect(state.selectedIndex).toBe(2);
+      done();
+    });
+  });
+
+  it('reset should set selected index to 0', done => {
+    stateStore.next();
+    stateStore.next();
+    stateStore.previous();
+    stateStore.reset();
+
+    stateStore.value$.subscribe(state => {
+      expect(state.selectedIndex).toBe(0);
+      done();
+    });
+  });
 
 });
