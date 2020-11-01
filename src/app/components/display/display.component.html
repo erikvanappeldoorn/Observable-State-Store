@@ -1,1 +1,4 @@
-<h1>{{ value$ | async }}</h1>
+<h1>{{ counterValue$ | async }}</h1>
+<ng-container *ngIf="selectedTrackValue$ | async as selectedTrackValue">
+  <h1>{{ selectedTrackValue.artist }} - {{ selectedTrackValue.song }} </h1>
+</ng-container>

@@ -9,9 +9,8 @@ export class TrackStateStore
   extends StateStoreBase<TrackState> 
   implements TrackStateStoreActions
   {
-    public constructor(initialState: TrackState) {
+    public constructor() {
       super(); 
-      this._state$ = new BehaviorSubject(initialState);
     }
 
     public next(): void {
@@ -34,6 +33,10 @@ export class TrackStateStore
       const state: TrackState = this._state$.value;
       state.selectedIndex = 0;
 
+      
+    }
+
+    public initialize(state: TrackState) {
       this._state$.next(state);
     }
 }

@@ -19,11 +19,9 @@ describe('TrackStateStore', () => {
    
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: TrackState, useFactory: () => initialize()}
-      ]
     });
     stateStore = TestBed.inject(TrackStateStore);
+    stateStore.initialize(initialize());
   });
 
   it('should be created', done => {
