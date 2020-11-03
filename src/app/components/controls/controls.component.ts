@@ -12,17 +12,6 @@ export class ControlsComponent {
 
   constructor(private counterStateStore: CounterStateStore,
               private trackStateStore: TrackStateStore) {
-
-    const trackState: TrackState = {
-        tracks: [
-            {id: 1, artist: 'Sam Smith', song: 'Diamonds'},
-            {id: 2, artist: 'Ava Max', song: 'Kings and Queens'},
-            {id: 3, artist: 'Harry Styles', song: 'Watermelon sugar'}
-        ],
-        selectedIndex: 0
-    };
-    this.trackStateStore.initialize(trackState);
-    this.reset();
   }
   
   public increment(): void {

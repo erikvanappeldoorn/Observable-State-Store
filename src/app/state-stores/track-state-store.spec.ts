@@ -1,27 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { TrackStateStore } from './track-state-store';
-import { TrackState } from '../state/track-state';
-import { filter } from 'rxjs/Operators';
-
-function initialize(): TrackState {
-  return {
-      tracks: [
-          {id: 1, artist: 'Sam Smith', song: 'Diamonds'},
-          {id: 2, artist: 'Ava Max', song: 'Kings and Queens'},
-          {id: 3, artist: 'Harry Styles', song: 'Watermelon sugar'}
-      ],
-      selectedIndex: 0
-    };
-}
+import { TrackService } from '../services/track.service';
+import { TrackServiceStub } from '../stubs/TrackServiceStub';
 
 describe('TrackStateStore', () => {
   let stateStore: TrackStateStore;
    
   beforeEach(() => {
     TestBed.configureTestingModule({
+      providers: [
+        { provide: TrackService, useClass:TrackServiceStub } 
+      ]
     });
     stateStore = TestBed.inject(TrackStateStore);
-    stateStore.initialize(initialize());
   });
 
   it('should be created', done => {
@@ -95,5 +86,4 @@ describe('TrackStateStore', () => {
       done();
     });
   });
-
 });
