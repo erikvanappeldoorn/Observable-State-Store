@@ -13,12 +13,4 @@ export class StateStoreBase<T> {
   public get value$(): Observable<T> {
     return this._state$.asObservable();
   }
-
-  private get value(): T {
-    return this._state$.value;
-  }
-
-  private setValue(value: T) {
-    this._state$.next(value);
-  }
 }

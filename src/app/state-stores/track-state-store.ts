@@ -39,7 +39,5 @@ export class TrackStateStore
     public reset(): void {
       const state: TrackState = this._state$.value;
       state.selectedIndex = 0;
-
-      
     }
 }
