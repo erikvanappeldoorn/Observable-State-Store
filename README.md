@@ -1,6 +1,6 @@
 # ObservableStateStore
 
-A private project from Eric van Appeldoorn.
+A private project from Erik van Appeldoorn.
 
 ## Project information
 
