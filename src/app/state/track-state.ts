@@ -4,3 +4,4 @@ export class TrackState {
     tracks: Track[];
     selectedIndex: number;
 }
+
